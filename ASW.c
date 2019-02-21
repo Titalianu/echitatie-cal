@@ -1,3 +1,5 @@
+#include "hal_linefollower.h"
+#include "hal_motor.h"
 #include "RTE.h"
 #include "general_types.h"
 #include "ASW.h"
@@ -15,14 +17,7 @@
 void Masinuta(void)
 {	
 	//Variabile
-	T_U8 black=0b1100;
 	T_U8 color;	
-	
-	T_U8 blackS1=black<<1;
-	T_U8 blackS2=black<<2;
-	T_U8 blackD1=black>>1;
-	T_U8 blackD2=black>>2;
-	
 	//Status Initial (Mers inainte)
 	RTE_Direction(0);
 	RTE_Speed(20);	

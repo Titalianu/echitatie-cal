@@ -7,10 +7,12 @@
 
 #include "general.h"
 #include "sys_tasks.h"
+#include "hal_battery.h"
 
 #include "mcal_init.h"
 #include "ASW.h"
 
+T_U8 Charge_lev;
 void TASK_Inits()
 {
     MCAL_vInit();
@@ -43,6 +45,9 @@ void TASK_500ms()
 }
 
 void TASK_1000ms()
-{		
-	Masinuta();
+{	
+    Charge_lev= CarBatteryLevel();
+
+    
+	//Masinuta();
 }
