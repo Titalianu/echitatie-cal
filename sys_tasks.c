@@ -8,6 +8,7 @@
 #include "general.h"
 #include "sys_tasks.h"
 #include "hal_battery.h"
+#include "hal_encoder.h"
 
 #include "mcal_init.h"
 #include "ASW.h"
@@ -17,6 +18,7 @@ void TASK_Inits()
 {
     MCAL_vInit();
     GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);	
+    QEI_vInit();//setare impulsuri la 32000(mijloc)
 }
 
 void TASK_1ms()
@@ -36,18 +38,16 @@ void TASK_10ms()
 
 void TASK_100ms()
 { 
-    
+
 }
 
 void TASK_500ms()
 { 
-
+   	Masinuta(); 
 }
 
 void TASK_1000ms()
 {	
-    Charge_lev= CarBatteryLevel();
-
-    
-	//Masinuta();
+    //Charge_lev= CarBatteryLevel();
+   
 }
