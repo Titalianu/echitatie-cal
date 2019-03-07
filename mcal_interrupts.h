@@ -21,6 +21,8 @@ void INT0_vInit(T_U8);
 void INT1_vInit(T_U8);
 void INT2_vInit(T_U8);
 
+extern BOOL bObstDetected;
+
 /* Interrupt Service Routine Declarations */
 void __attribute__((__interrupt__, no_auto_psv)) _INT0Interrupt(void);
 void __attribute__((__interrupt__, no_auto_psv)) _INT1Interrupt(void);

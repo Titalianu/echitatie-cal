@@ -9,6 +9,7 @@
 #include "sys_tasks.h"
 #include "hal_battery.h"
 #include "hal_encoder.h"
+#include "obstacol.h"
 
 #include "mcal_init.h"
 #include "ASW.h"
@@ -43,7 +44,8 @@ void TASK_100ms()
 
 void TASK_500ms()
 { 
-   	Masinuta(); 
+    Tratare_obstacol();
+   	//Masinuta(); 
 }
 
 void TASK_1000ms()

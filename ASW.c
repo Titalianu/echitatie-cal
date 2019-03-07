@@ -1,6 +1,7 @@
 #include "hal_linefollower.h"
 #include "hal_motor.h"
 #include "hal_encoder.h"
+#include "obstacol.h"
 #include "RTE.h"
 #include "general_types.h"
 #include "ASW.h"
@@ -18,19 +19,20 @@
 void Masinuta(void)
 {	
 	//Variabile
-	T_U8 color;	
+	//T_U8 color;	
 	//Status Initial (Mers inainte)
 	RTE_Direction(0);
 	RTE_Speed(20);
 
-   /*
+    
     centimetri_parcursi+=QEI_s16getElapsed();
-    if(centimetri_parcursi>=10)
+    if(centimetri_parcursi>=30)
     {
         centimetri_parcursi=0;
         RTE_Speed(0);
     }
-    */
+ 
+    /*
 	color=RTE_Follower();
 	switch(color){
 	case 0b1100://linie dreapta
@@ -64,5 +66,5 @@ void Masinuta(void)
 	
 	}
 	
-
+    */
 }
