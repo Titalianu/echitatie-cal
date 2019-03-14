@@ -10,6 +10,7 @@
 #include "hal_battery.h"
 #include "hal_encoder.h"
 #include "obstacol.h"
+#include "asw_com.h"
 
 #include "mcal_init.h"
 #include "ASW.h"
@@ -39,7 +40,9 @@ void TASK_10ms()
 
 void TASK_100ms()
 { 
-
+    COM_vStartListening(); 
+    COM_vCheckIRQ();
+    COM_vProcessFIFO(); 
 }
 
 void TASK_500ms()
