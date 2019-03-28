@@ -11,6 +11,7 @@
 #include "hal_encoder.h"
 #include "obstacol.h"
 #include "asw_com.h"
+#include "hal_nRF.h"
 
 #include "mcal_init.h"
 #include "ASW.h"
@@ -20,7 +21,7 @@ void TASK_Inits()
 {
     MCAL_vInit();
     GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);	
-    QEI_vInit();//setare impulsuri la 32000(mijloc)
+    RF_vInit();
 }
 
 void TASK_1ms()
@@ -40,15 +41,15 @@ void TASK_10ms()
 
 void TASK_100ms()
 { 
-    COM_vStartListening(); 
-    COM_vCheckIRQ();
-    COM_vProcessFIFO(); 
+     Masinuta(); 
+    //COM_vStartListening(); 
+    //COM_vCheckIRQ();
+    //COM_vProcessFIFO(); 
 }
 
 void TASK_500ms()
 { 
-    Tratare_obstacol();
-   	//Masinuta(); 
+    //Tratare_obstacol();
 }
 
 void TASK_1000ms()
