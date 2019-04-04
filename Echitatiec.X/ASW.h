@@ -6,5 +6,5 @@
 
 
 void Masinuta(void);
-
+void DetectareTraseu();
 #endif
